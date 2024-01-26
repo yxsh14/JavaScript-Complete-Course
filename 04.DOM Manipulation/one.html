@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Document</title>
+</head>
+<body style="background-color: grey; color: white;">
+    <div class="parent" >
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const par=document.querySelector(".parent");
+    // console.log(par);
+    // console.log(par.children);
+    // for(let i=0;i<parent.children.length;i++){
+    //     console.log(par.children[i].innerHTML);
+    // }
+    // console.log(par.firstElementChild);
+    // console.log(par.lastElementChild);
+
+    console.log("Nodes: ",par.childNodes); //there will be 9 elements because behind the scene when we are pressing enter a new <br> will form and it will be considered as an node.
+
+
+</script>
+</html>

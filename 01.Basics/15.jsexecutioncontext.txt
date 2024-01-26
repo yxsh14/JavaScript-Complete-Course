@@ -1,0 +1,12 @@
+Javascript is single threaded.
+There are 2 execution contexts:
+1. Javascript Execution Context
+2. Function Execution Context
+3. Eval Execution Context (Optional)
+
+It runs in two phase
+1. Memory Creation Phase
+2. Execution Phase
+
+
+

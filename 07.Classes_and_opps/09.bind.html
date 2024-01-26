@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Button</button>
+</body>
+<script>
+    class React{
+        constructor(server, url){
+            this.server="server",
+            this.url="url",
+            document.querySelector("#btn").addEventListener('click',this.handleClick.bind(this))// with bind(this) we are binding this of react with this of selected query 
+        }
+        handleClick(){
+            console.log("button Clicked")
+            console.log(this) //Sirf this mai button aa raha qki jab humne this.handleClick kiya to waha sirf query selector ne button select kar rakha tha.
+            // Per hum chahte hain ki banki sara context bhi aaye jo constructor mai hai
+
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // before await and async we used to use XMLHttpRequest()
+    const requestUrl='https://api.github.com/users/yxsh14'
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    // The request is not sent yet we havve to do that manually 
+    // console.log(xhr.readyState); //1
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState); //2 3 4 
+        if (xhr.readyState===4){
+            console.log(this.responseText);
+            console.log(this.responseText.followers); //undefined
+            // why it's happening because the data comes in string we have to convert it in JSON format by using JSON.parse
+            const data=JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.followers);
+
+        }
+    }
+    xhr.send();
+    // now it is sent
+</script>
+</html>

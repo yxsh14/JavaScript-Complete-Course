@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Doc</title>
+</head>
+<body style="background-color: grey; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function  addLanguage(langName){
+        const li=document.createElement('li');
+        lang=document.querySelector(".language");
+        li.innerHTML=`${langName}`
+        lang.appendChild(li);
+    }
+    addLanguage("Python")
+    addLanguage("TypeScript")
+    function addOptimizeLang(langName){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(`${langName}`));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptimizeLang("GoLang");
+
+    // Edit 2nd element of list
+    const secondList=document.querySelector('li:nth-child(2)');
+    // secondList.innerHTML="Mojo"
+    const newli=document.createElement('li');
+    newli.textContent="Mojo";
+    secondList.replaceWith(newli);
+
+
+    // Edit first element with type script
+    const firstEL=document.querySelector('li:nth-child(1)');
+    // const newElement=document.createElement('li');
+    // newElement.textContent="TypeScript";
+    // firstEL.replaceWith(newElement);
+    firstEL.outerHTML='<li>TypeScript</li>'
+
+    // remove last element
+    const lastElement=document.querySelector('li:nth-child(n)');
+    //const lastElement=document.querySelector('li:last-child(n)');
+    lastElement.remove();
+
+</script>
+</html>

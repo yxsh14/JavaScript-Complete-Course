@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img id="cat" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fcatbatman--757238124871900611%2F&psig=AOvVaw3p7tuoIjpQfEvHvBCl5Ln4&ust=1705388506303000&source=images&cd=vfe&ved=0CBMQjRxqFwoTCLCYzrbp3oMDFQAAAAAdAAAAABAE" alt="cat">
+        </li>
+    </ul>
+    
+</body>
+<script>
+    // Java script is a sequential language. The events in JS runs sequentially.
+    // onclick is limited with functionalities where as Event listeners are better as they provide more functionalities
+    // document.getElementById('cat').onclick=function(){
+    //     alert("Clicked Cat.");
+    // };
+    document.getElementById('cat').addEventListener('click',function(e){
+        console.log(e);
+        // Padhna kya hai events mai 
+        // Events k types,timestamp,defaultPrevented
+        // target,toElement,srcElement, currentTarget
+        // clientX, clientY, ScreenX, ScreenY
+        // altkey,ctrlkey,shiftkey,keyCode
+        alert("clicked Cat again");
+    },false)
+    // attachEvent()
+    // jQuery- On laga kar element pr listen kar skte the
+
+    // Event Propogation
+    // 1.Event Bubbling- when events runs from down to up 
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log('Clicked Images');
+    },false)
+    document.getElementById('cat').addEventListener('click',function(e){
+        console.log('Clicked Cats ');
+    },false)
+    // When Clicked cat console will show : Clicked Cats ,Clicked Images because events are running like bubbles from down to up
+
+    // 2.Event Capturing- when events runs from up to down 
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log('Clicked Images');
+    },true)
+    document.getElementById('cat').addEventListener('click',function(e){
+        console.log('Clicked Cats ');
+        e.stopPropagation() //sirf clicked cats hi execute hone dega propogation rook dega 
+        
+    },true)
+    // When Clicked cat console will show : Clicked Images,Clicked Cats  because events are running like capturing from up to down 
+
+
+
+</script>
+</html>

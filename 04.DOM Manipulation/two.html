@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Doct</title>
+</head>
+<body style="background-color: grey; color: white;">
+    
+</body>
+<script>
+    const div=document.createElement('div')
+    console.log(div);
+    div.className="main";
+    div.id="myID";
+    div.setAttribute("title","MyTitle"); // direct sets it le kar nhi aata wahi set kar deta hai 
+    div.style.backgroundColor="red";
+    div.style.padding="12px";
+    // div.innerText="chai and code" // is method mai wo le kar aata hai or overwrite karta hai to ek round trip ho jaati hai
+    const addtext=document.createTextNode("chai and code") //log isko efficent maante hain qki wo bhi wahi set karta hai or ek trip bachti hai 
+    div.appendChild(addtext)
+    //  Till now we won't be able to see the document because div is still in memory not attached in document.
+    //  So to attach it into the doc 
+    document.body.appendChild(div);
+</script>
+</html>

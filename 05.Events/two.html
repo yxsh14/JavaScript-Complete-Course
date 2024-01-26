@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two</title>
+</head>
+<body>
+    <h1>Yash Sahu</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Async functions
+    setTimeout(function(){
+        console.log("Yash");
+    },2000);
+    //The first parameter is a handler. Handler is basically a function without name which will do whatever user desires on 2000ms.
+    //Callback funct is a function passed as argument in another function.
+    // setInterval(function(){
+    //     console.log("Yash Sahu");
+    // },2000);
+    // Suppose we want to write This is an introduction after two seconds.
+    const Intro=function(){
+        document.querySelector('h1').innerHTML='This is an introduction';
+    }
+    const ChangeRef=setTimeout(Intro,2000);
+
+    // Now suppose if we want to stop the Intervel before it's execution.
+    // so we'll use clearInterval but it takes reference of the setTimeout which we want to stop
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(ChangeRef); 
+        console.log('Stopped');
+    })
+    
+</script>
+</html>
